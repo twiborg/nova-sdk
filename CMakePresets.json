@@ -1,0 +1,63 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 24,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "NOVA_BUILD_TESTS": "ON",
+        "NOVA_BUILD_EXAMPLES": "ON"
+      }
+    },
+    {
+      "name": "msvc-x64-debug",
+      "inherits": "base",
+      "displayName": "MSVC x64 Debug",
+      "description": "Debug build for MSVC x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "msvc-x64-release",
+      "inherits": "base",
+      "displayName": "MSVC x64 Release",
+      "description": "Release build for MSVC x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "msvc-x64-debug",
+      "displayName": "Build MSVC x64 Debug",
+      "configurePreset": "msvc-x64-debug"
+    },
+    {
+      "name": "msvc-x64-release",
+      "displayName": "Build MSVC x64 Release",
+      "configurePreset": "msvc-x64-release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "msvc-x64-debug",
+      "displayName": "Test MSVC x64 Debug",
+      "configurePreset": "msvc-x64-debug",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

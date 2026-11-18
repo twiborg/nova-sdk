@@ -1,0 +1,41 @@
+# Build directories
+build/
+build-release/
+
+# CMake generated files and caches
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CTestTestfile.cmake
+cmake_install.cmake
+install_manifest.txt
+Testing/
+
+# Microsoft Visual Studio / MSBuild temporary files
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.vcproj
+*.suo
+*.users
+*.ipch/
+*.pdb
+*.idb/
+*.tlog/
+*.lastbuildstate/
+*.log
+.Directory/
+
+# IDE-specific user settings
+.vs/
+.idea/
+*.code-workspace
+
+# Temporary staging and consumer directories
+build\rc-*-dist-*/
+build\rc-4.0.5-*/
+/rc-4.0.5-*/
+
+# Release archive (built artifact)
+*.zip
+!**/keep-archives/
